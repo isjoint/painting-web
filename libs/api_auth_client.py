@@ -24,7 +24,7 @@ secretkey = '123456'
 sign = calculate_sign(appid, salt, secretkey)
 
 
-url = 'http://127.0.0.1:9000/v1/product'
+url = 'http://127.0.0.1:9000/v1/painting'
 params = {
     'appid': appid,
     'salt': salt,

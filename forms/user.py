@@ -1,8 +1,3 @@
-"""
-    author: wenyao
-   data: 2022/7/5
-   project: flask_proj
-"""
 from wtforms import Form, StringField
 from wtforms.validators import DataRequired, Regexp, ValidationError
 from models.user import User
@@ -17,10 +12,6 @@ class UserForm(Form):
     def validate_username(self, value):
         if User.query.filter_by(username=value.data).first():
             raise ValidationError("用户已存在")
-
-    # def validate_password(self, value):
-    #     #对数据进行修改，给客户端传进来的所有密码都加一个sanchuang-开头
-    #     value.data = "sanchuang-" + value.data
 
 #登录校验
 class LoginForm(Form):

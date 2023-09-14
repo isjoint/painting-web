@@ -1,9 +1,6 @@
 """
-@author: wy
-@file: user.py
-@time: 2023/7/31 14:38
+api授权表
 """
-
 from models import db
 from werkzeug.security import generate_password_hash
 import datetime

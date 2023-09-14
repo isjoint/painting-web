@@ -13,7 +13,7 @@ db = SQLAlchemy()
 def init_app_db(app):
     db.init_app(app)
 
-from . import product
+from . import painting
 from . import user
 
 
