@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <script type="application/javascript" href="/static/js/jquery-3.7.js"></script>
+    <script type="application/javascript" href="/static/js/bootstrap.js"></script>
+</head>
+
+<body>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple web</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+<table class="table">
+    <th><td>产品名称</td>
+        <td>产品种类</td>
+        <td>产品价格</td>
+        <td>产品产地</td>
+        <td>操作</td>
+    </th>
+  # 模板继承
+  {% for pro in prolist %}
+    <tr><td></td>
+        <td>{{ pro.product_name }}</td>
+        <td>{{ pro.kind.kind_name }}</td>
+        <td>{{ pro.product_price }}</td>
+        <td>{{ pro.product_address }}</td>
+        <!-- url_for  flask的一个函数，可以通过endpoint来查找url-->
+        <!--<td><a href="{{ url_for('product_bp.product2_delete', id = pro.product_id) }}">删除</a></td>-->
+        <td><a href="/v1/product/delete2?id={{pro.product_id}}">删除</a></td>
+    </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
